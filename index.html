@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anime Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./logo.png" type="image/png" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>
+        <img src="./logo.png" alt="icon" class="logo-icon" />
+        Anime Tracker
+      </h1>
+      <div class="filters">
+        <input id="search" placeholder="Buscar por título..." />
+        <select id="statusFilter">
+          <option value="">Todos</option>
+          <option>Assistindo</option>
+          <option>Completo</option>
+          <option>Dropado</option>
+          <option>Planejo Assistir</option>
+        </select>
+        <select id="sort">
+          <option value="">Ordenar por título</option>
+          <option value="rating">Melhor avaliados</option>
+          <option value="recent">Mais recentes</option>
+        </select>
+        <button id="btnReload">Atualizar</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card form-card">
+        <h2>Cadastrar anime</h2>
+        <form id="formCreate">
+          <div class="grid">
+            <label
+              >Título
+              <input name="title" required />
+            </label>
+            <label
+              >Gênero
+              <input name="genre" placeholder="Ação, Aventura..." />
+            </label>
+            <label
+              >Episódios
+              <input name="episodes" type="number" min="1" />
+            </label>
+            <label
+              >Status
+              <select name="status">
+                <option>Planejo Assistir</option>
+                <option>Assistindo</option>
+                <option>Completo</option>
+                <option>Dropado</option>
+              </select>
+            </label>
+            <label
+              >Data de lançamento
+              <input name="release_date" type="date" />
+            </label>
+            <label
+              >URL da capa
+              <input name="cover_url" placeholder="https://..." />
+            </label>
+          </div>
+          <button type="submit">Cadastrar</button>
+          <span id="createMsg" class="msg"></span>
+        </form>
+      </section>
+
+      <section>
+        <h2 class="section-title">Meus animes</h2>
+        <div id="list" class="cards-grid"></div>
+        <p id="empty" class="muted" hidden>Nenhum anime encontrado.</p>
+      </section>
+
+      <dialog id="editModal" class="modal">
+        <form id="formEdit" method="dialog" class="modal-content">
+          <h3>Editar anime</h3>
+          <div class="grid">
+            <label
+              >Título
+              <input name="title" required />
+            </label>
+            <label
+              >Gênero
+              <input name="genre" placeholder="Ação, Aventura..." />
+            </label>
+            <label
+              >Episódios
+              <input name="episodes" type="number" min="1" />
+            </label>
+            <label
+              >Status
+              <select name="status">
+                <option>Planejo Assistir</option>
+                <option>Assistindo</option>
+                <option>Completo</option>
+                <option>Dropado</option>
+              </select>
+            </label>
+            <label
+              >Data de lançamento
+              <input name="release_date" type="date" />
+            </label>
+            <label
+              >URL da capa
+              <input name="cover_url" placeholder="https://..." />
+            </label>
+          </div>
+
+          <div class="modal-actions">
+            <button type="submit" class="btn ok">Salvar</button>
+            <button type="button" class="btn" id="btnCloseEdit">
+              Cancelar
+            </button>
+          </div>
+          <span id="editMsg" class="msg"></span>
+        </form>
+      </dialog>
+    </main>
+
+    <footer class="app-footer">
+      <div class="social-links">
+        <a
+          href="https://github.com/seuusuario"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+            alt="GitHub"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/seuusuario"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
+            alt="LinkedIn"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/seuusuario"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+            alt="Instagram"
+          />
+        </a>
+      </div>
+      <p class="credits">Desenvolvido por <strong>Anna Beatryz</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
